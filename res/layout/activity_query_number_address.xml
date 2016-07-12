@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:coconut="http://schemas.android.com/apk/res/com.coconut.mobilesafe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#aa22ff00"
+        android:gravity="center"
+        android:text="号码归属地查询"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <EditText
+        android:hint="请输入号码"
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="11"
+        android:textSize="20sp"
+        android:inputType="phone" >
+
+    </EditText>
+
+    <Button
+        android:onClick="queryNumber"
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查询" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="归属地"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</LinearLayout>

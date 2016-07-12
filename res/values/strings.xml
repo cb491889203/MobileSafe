@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">五星安全卫士</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="sample_device_admin_description">这是自己创建的设备管理员描述</string>
+    <string name="sample_device_admin">自定义设备管理员</string>
+
+</resources>

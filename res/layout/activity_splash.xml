@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splashpic"
+    tools:context="com.coconut.mobilesafe.SplashActivity"
+    android:id="@+id/rl_root" >
+
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:shadowColor="#ff0000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="版本号：1.0"
+        android:textColor="#222222"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_version"
+        android:layout_centerHorizontal="true"
+        android:shadowColor="#ff0000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="3"
+        android:text="五星安全卫士"
+        android:textSize="30sp"
+        android:textColor="#ff4444"
+        android:textStyle="bold" />
+
+    <ProgressBar
+        android:id="@+id/pb_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_version"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_download"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_marginBottom="10dp"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="正在下载：5%"/>
+
+</RelativeLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:coconut="http://schemas.android.com/apk/res/com.coconut.mobilesafe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#aa22ff00"
+        android:gravity="center"
+        android:text="流量统计"
+        android:textColor="#000000"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/tv_total_traffic"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#ff888888"
+        android:gravity="center_vertical"
+        android:text="已用总流量:"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/ll_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="正在加载数据" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_traffic_infos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fastScrollEnabled="true" >
+        </ListView>
+
+        <TextView
+            android:id="@+id/tv_showcounts"
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:background="#ff888888"
+            android:gravity="center_vertical"
+            android:text="用户应用"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.coconut.mobilesafe"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BIND_DEVICE_ADMIN" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.coconut.mobilesafe" />
+
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.DELETE_CACHE_FILES" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.coconut.mobilesafe.HomeActivity" />
+        <activity android:name="com.coconut.mobilesafe.SettingActivity" />
+        <activity android:name="com.coconut.mobilesafe.LostFindActivity" />
+        <activity android:name="com.coconut.mobilesafe.Setup1Activity" />
+        <activity android:name="com.coconut.mobilesafe.Setup2Activity" />
+        <activity android:name="com.coconut.mobilesafe.Setup3Activity" />
+        <activity android:name="com.coconut.mobilesafe.Setup4Activity" />
+        <activity android:name="com.coconut.mobilesafe.SelectContactsActivity" />
+        <activity android:name="com.coconut.mobilesafe.AtoolsActivity" />
+        <activity android:name="com.coconut.mobilesafe.NumberAddressActivty" />
+        <activity android:name="com.coconut.mobilesafe.CallSafeActivity" />
+        <activity android:name="com.coconut.mobilesafe.AppManagerActivity" />
+        <activity android:name="com.coconut.mobilesafe.TaskManagerActivity" />
+        <activity android:name="com.coconut.mobilesafe.TaskSettingActivity" />
+        <activity
+            android:name="com.coconut.mobilesafe.CacheManagerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.coconut.mobilesafe.ApplockActiviaty"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance" />
+        <activity android:name="com.coconut.mobilesafe.TrafficManagerActivity" />
+        <activity
+            android:name="com.coconut.mobilesafe.AntiVirusActitivy"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name="com.coconut.mobilesafe.AddBlackNumberFromCalllogActivity" />
+        <activity android:name="com.coconut.mobilesafe.AddBlackNumberFromSmsActivity" />
+
+        <receiver android:name="com.coconut.mobilesafe.receiver.BootCompleteReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.coconut.mobilesafe.receiver.SMSreseiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- <activity -->
+        <!-- android:name=".app.DeviceAdminSample" -->
+        <!-- android:label="@string/activity_sample_device_admin" > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+        <!-- <category android:name="android.intent.category.SAMPLE_CODE" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+
+        <receiver
+            android:name="com.coconut.mobilesafe.receiver.MyDeviceReceiver"
+            android:description="@string/sample_device_admin_description"
+            android:label="@string/sample_device_admin"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_sample" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.coconut.mobilesafe.receiver.MyWidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_ENABLED" />
+                <action android:name="android.appwidget.action.APPWIDGET_RECEIVE" />
+                <action android:name="android.appwidget.action.APPWIDGET_DISABLED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/process_widget_provider" />
+        </receiver>
+        <receiver android:name="com.coconut.mobilesafe.receiver.KillAllReceiver" >
+            <intent-filter>
+                <action android:name="com.coconut.mobilesafe.killall" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.coconut.mobilesafe.service.LocationService" />
+        <service android:name="com.coconut.mobilesafe.service.AddressService" />
+        <service android:name="com.coconut.mobilesafe.service.CallSmsSafeService" />
+        <service android:name="com.coconut.mobilesafe.service.AutoCleanService" />
+        <service android:name="com.coconut.mobilesafe.service.UpdateWidgetService" />
+        <service android:name="com.coconut.mobilesafe.service.UpdateWidgetService2" />
+        <service android:name="com.coconut.mobilesafe.service.ApplockService" />
+    </application>
+
+</manifest>

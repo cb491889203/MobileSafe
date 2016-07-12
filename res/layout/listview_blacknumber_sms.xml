@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp" >
+
+    <TextView
+        android:id="@+id/tv_sms_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="骚扰号码"
+        android:textColor="#ff0000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_sms_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_sms_number"
+        android:layout_marginTop="5dp"
+        android:text="短信内容"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_sms_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_sms_date"
+        android:layout_marginTop="5dp"
+        android:singleLine="true"
+        android:text="短信内容"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+</RelativeLayout>
